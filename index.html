@@ -1,0 +1,110 @@
+<html>
+<head>
+
+  <meta charset="UTF-8">
+
+  <style>
+  #myProgress {
+    width: 300px;
+    background-color: grey;
+  }
+
+  #myBar {
+    width: 0%;
+    height: 15px;
+    background-color: green;
+  }
+
+  .column {
+    float: left;
+    width: 33%;
+  }
+  .column-playlists {
+    float: left;
+    width: 20%;
+  }
+
+  .column-tracks {
+    float: left;
+    width: 33%;
+  }
+  .column-queue {
+    float: left;
+    width: 45%;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+</style>
+
+
+</head>
+
+<body>
+  <!-- <button id="pause-button">Pause</button> -->
+  <button id="previous-button"><img src="images/fast-rewind-button.png" height="30" width="30" /></button>
+  <button id="play-button"><img src="images/play-button.png" height="30" width="30" /></button>
+  <button id="next-button"><img src="images/fast-forward-button.png" height="30" width="30" /></button>
+  <br><br>
+
+  <div id="myProgress">
+    <div id="myBar"></div>
+  </div>
+  <p id="current-timing">0:00 / 0:00</p>
+  <p id="current-playing"></p>
+
+
+
+
+  <div class="row">
+    <div class="column-playlists">
+      <p>
+        <ul id="user-playlists" style="list-style-type:none;">
+
+          <ul>
+          </p>
+
+        </div>
+
+
+        <div class="column-tracks">
+          <button id="play-playlist">PLAY PLAYLIST</button>
+          <p>
+            <ul id="playlist-content" style="list-style-type:none;">
+              <ul>
+              </p>
+
+            </div>
+
+            <div class="column-queue">
+              <p>
+                CURRENT PLAYLIST:<br>
+                <ol id="queue-content" style="">
+                </ol>
+                  </p>
+
+                </div>
+              </div>
+
+
+              <br>
+              <button id="log-in">Zaloguj</button>
+              <button id="log-out">Wyloguj</button>
+
+              <!-- <time id="apple-music-current-playback-duration"></time>
+              <time id="apple-music-current-playback-time"></time>
+              <span id="apple-music-current-playback-progress"></span> -->
+
+
+            </body>
+
+            <script src="https://js-cdn.music.apple.com/musickit/v1/musickit.js"></script>
+            <script src="index.js"></script>
+            <script src="events.js"></script>
+            <script src="decorations.js"></script>
+
+            </html>
