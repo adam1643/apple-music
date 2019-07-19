@@ -1,10 +1,10 @@
 let music;
 document.addEventListener('musickitloaded', function() {
   // MusicKit global is now defined
-  fetch('token').then(response => response.json()).then(res => {
+//   fetch('token').then(response => response.json()).then(res => {
 
     music = MusicKit.configure({
-      developerToken: res.token,
+      developerToken: "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkdBUzhXQTVCRFcifQ.eyJpYXQiOjE1NTczNDY4MDksImV4cCI6MTU3Mjg5ODgwOSwiaXNzIjoiSloyVE1BR0syMyJ9.rPrIVufoc38Qh31HX8BaYoSh4ICXvHtUlyflv-22u2XdJnLo5YUzBUP1StlXTkBzJxbN19HrszyEopFlKyCwEg",
       app: {
         name: 'AppleMusicKitExample',
         build: '1978.4.1'
@@ -12,10 +12,10 @@ document.addEventListener('musickitloaded', function() {
 
     });
     // music = MusicKit.getInstance();
-    music.setQueue({ playlist: 'p.Av1c8PNm8g' }).then(function(queue) { music.play() });
+    //music.setQueue({ playlist: 'p.Av1c8PNm8g' }).then(function(queue) { music.play() });
     addEvents();
     showUserPlaylists();
-  });
+//   });
 });
 
 var id;
