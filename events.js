@@ -38,6 +38,7 @@ function addEvents() {
 
   music.addEventListener("mediaItemDidChange", item => {
     document.getElementById('current-playing').innerHTML = item.item.info;
+    showLyrics();
     // console.log(music.player.queue);
     showQueueContent(music.player.queue);
     move();

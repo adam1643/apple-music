@@ -1,4 +1,34 @@
 let music;
+let xml = new XMLHttpRequest();
+let globalLyric;
+function parseLyrics(data) {
+    // console.log(data);
+    globalLyric = data;
+    lyric = decodeURIComponent(JSON.parse(data));
+    lyric = lyric.substr(1, lyric.length-2);
+    console.log(lyric);
+    globalLyric = lyric;
+    parsed = lyric.replace(/\\n|\\r\\n|\\r/g, '<br/>');
+
+    par = document.getElementById("lyrics");
+    par.innerHTML = parsed;
+
+}
+
+function showLyrics() {
+    title = music.player.nowPlayingItem.attributes.name
+    artist = music.player.nowPlayingItem.attributes.artistName
+    xml.open("GET", "http://localhost:8081/track&artist=" + artist + "&song=" + title, true)
+    xml.send();
+}
+
+xml.onreadystatechange = function() {
+        if (xml.readyState == 4 && xml.status == 200)
+            parseLyrics(xml.responseText);
+    }
+
+
+
 document.addEventListener('musickitloaded', function() {
   // MusicKit global is now defined
 //   fetch('token').then(response => response.json()).then(res => {
