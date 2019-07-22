@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Apple Music Web Player</title>
+  <title>Apple Music Web Player</title>
   <meta charset="UTF-8">
 
   <style>
@@ -85,29 +85,36 @@
                 CURRENT PLAYLIST:<br>
                 <ol id="queue-content" style="">
                 </ol>
-                  </p>
-
-                </div>
-              </div>
-
-
-              <br>
-              <button id="log-in">Zaloguj</button>
-              <button id="log-out">Wyloguj</button>
-
-              <p id="lyrics">dd
               </p>
 
-              <!-- <time id="apple-music-current-playback-duration"></time>
-              <time id="apple-music-current-playback-time"></time>
-              <span id="apple-music-current-playback-progress"></span> -->
+            </div>
+          </div>
 
 
-            </body>
+          <br>
+          <button id="log-in">Zaloguj</button>
+          <button id="log-out">Wyloguj</button>
 
-            <script src="https://js-cdn.music.apple.com/musickit/v1/musickit.js"></script>
-            <script src="index.js"></script>
-            <script src="events.js"></script>
-            <script src="decorations.js"></script>
+          <div>
+            <input type="text" id="search-input"></input>
+            <button id="search-btn">Search</button>
+            <br>
+            <p id="search-results"></p>
+          </div>
 
-            </html>
+            <p id="lyrics">dd
+            </p>
+
+            <!-- <time id="apple-music-current-playback-duration"></time>
+            <time id="apple-music-current-playback-time"></time>
+            <span id="apple-music-current-playback-progress"></span> -->
+
+
+          </body>
+
+          <script src="https://js-cdn.music.apple.com/musickit/v1/musickit.js"></script>
+          <script src="index.js"></script>
+          <script src="events.js"></script>
+          <script src="decorations.js"></script>
+
+          </html>

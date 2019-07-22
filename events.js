@@ -36,6 +36,39 @@ function addEvents() {
     });
   });
 
+  document.getElementById('search-btn').addEventListener('click', (t) => {
+    searchInput = document.getElementById('search-input').value;
+    if(searchInput == "") {
+      return;
+    }
+
+    searchPar = document.getElementById('search-results');
+
+    music.api.search(searchInput, {limit: 20}).then(function(results) {
+    if(!results.songs) {
+      searchPar.innerHTML = "No results.";
+    } else {
+      tracks = results.songs.data;
+      searchPar.innerHTML = "";
+
+        for(track of tracks) {
+          title = track.attributes.name;
+          artist = track.attributes.artistName;
+
+          var node = document.createElement("li");
+
+          node.innerHTML += title + " -- " + artist + "<br />";
+          node.onclick = changeToTrackId(track.id);
+          searchPar.appendChild(node);
+        }
+      }
+
+    });
+
+
+
+  });
+
   music.addEventListener("mediaItemDidChange", item => {
     document.getElementById('current-playing').innerHTML = item.item.info;
     showLyrics();
@@ -102,6 +135,12 @@ function changeToTrackIndex(index) {
   return function() {
     console.log("a");
     music.player.changeToMediaAtIndex(index);
+  };
+}
+
+function changeToTrackId(id) {
+  return function() {
+    music.player.
   };
 }
 
